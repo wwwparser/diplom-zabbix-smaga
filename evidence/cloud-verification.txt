@@ -1,0 +1,71 @@
+﻿Verification UTC: 2026-10-02T07:23:22Z
+=== Ansible Zabbix recap ===
+
+PLAY RECAP *********************************************************************
+diplom-zabbix.ru-central1.internal : ok=16   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY RECAP *********************************************************************
+diplom-bastion.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-elastic.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-kibana.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-web-a.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-web-b.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-zabbix.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+=== Monitoring configuration ===
+{
+  "hosts": [
+    {
+      "hostid": "10683",
+      "host": "diplom-web-a.ru-central1.internal",
+      "status": "0"
+    },
+    {
+      "hostid": "10684",
+      "host": "diplom-web-b.ru-central1.internal",
+      "status": "0"
+    },
+    {
+      "hostid": "10685",
+      "host": "diplom-elastic.ru-central1.internal",
+      "status": "0"
+    },
+    {
+      "hostid": "10686",
+      "host": "diplom-zabbix.ru-central1.internal",
+      "status": "0"
+    },
+    {
+      "hostid": "10687",
+      "host": "diplom-kibana.ru-central1.internal",
+      "status": "0"
+    },
+    {
+      "hostid": "10688",
+      "host": "diplom-bastion.ru-central1.internal",
+      "status": "0"
+    }
+  ],
+  "dashboard": [
+    {
+      "dashboardid": "401",
+      "name": "Diplom - USE infrastructure",
+      "userid": "1",
+      "private": "1",
+      "display_period": "30",
+      "auto_start": "1",
+      "uuid": ""
+    }
+  ]
+}
+=== Log collection ===
+{"count":3516,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0}}
+{"took":4,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":3516,"relation":"eq"},"max_score":null,"hits":[]},"aggregations":{"nodes":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[{"key":"diplom-web-b.ru-central1.internal","doc_count":1774},{"key":"diplom-web-a.ru-central1.internal","doc_count":1742}]},"types":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[{"key":"access","doc_count":3515},{"key":"error","doc_count":1}]}}}
+=== Identical web content ===
+diplom-web-a
+941dd9e74650dc279772573afee45c67eb5e2d079efdeb23b87d6bbc532ae83a  /var/www/html/index.html
+filebeat Up 33 minutes
+diplom-web-b
+941dd9e74650dc279772573afee45c67eb5e2d079efdeb23b87d6bbc532ae83a  /var/www/html/index.html
+filebeat Up 33 minutes

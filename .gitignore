@@ -1,0 +1,12 @@
+.private/
+tools/
+terraform/.terraform/
+terraform/*.tfstate*
+terraform/*.tfplan
+terraform/terraform.tfvars
+terraform/terraform.tfvars.json
+ansible/secrets.yml
+*.pem
+.env
+__pycache__/
+*.pyc

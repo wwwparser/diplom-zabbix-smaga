@@ -1,0 +1,5 @@
+cloud_id       = "YOUR_CLOUD_ID"
+folder_id      = "YOUR_FOLDER_ID"
+ssh_public_key = "ssh-ed25519 YOUR_PUBLIC_KEY"
+admin_cidr     = "YOUR_ADMIN_PUBLIC_IP/32"
+preemptible    = false

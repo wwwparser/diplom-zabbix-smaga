@@ -1,0 +1,1828 @@
+﻿[
+  {
+    "hostid": "10683",
+    "host": "diplom-web-a.ru-central1.internal",
+    "interfaces": [
+      {
+        "available": "1",
+        "error": ""
+      }
+    ],
+    "custom_items": [
+      {
+        "itemid": "50852",
+        "key_": "diplom.net.drops",
+        "name": "Network dropped packets",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50853",
+        "key_": "diplom.threshold.diplom.net.drops",
+        "name": "Network dropped packets threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50854",
+        "key_": "diplom.services.failed",
+        "name": "Failed systemd units",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50855",
+        "key_": "diplom.threshold.diplom.services.failed",
+        "name": "Failed systemd units threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925845",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50856",
+        "key_": "diplom.kernel.errors",
+        "name": "Kernel hardware errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925846",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50857",
+        "key_": "diplom.threshold.diplom.kernel.errors",
+        "name": "Kernel hardware errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925847",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50858",
+        "key_": "diplom.memory.stalls",
+        "name": "Memory allocation stalls",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925848",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50863",
+        "key_": "diplom.http.active",
+        "name": "HTTP active connections",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "5"
+      },
+      {
+        "itemid": "50865",
+        "key_": "diplom.http.errors",
+        "name": "HTTP 5xx per second",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50866",
+        "key_": "diplom.threshold.diplom.http.errors",
+        "name": "HTTP 5xx per second threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50811",
+        "key_": "diplom.cpu.util",
+        "name": "CPU utilization",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925861",
+        "lastvalue": "1.1829390000000046"
+      },
+      {
+        "itemid": "50812",
+        "key_": "diplom.threshold.diplom.cpu.util",
+        "name": "CPU utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "50814",
+        "key_": "diplom.threshold.system.cpu.load_percpu_avg1_",
+        "name": "CPU queue per core threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925864",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "50816",
+        "key_": "diplom.threshold.vm.memory.size_pused_",
+        "name": "RAM used threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925866",
+        "lastvalue": "90"
+      },
+      {
+        "itemid": "50818",
+        "key_": "diplom.threshold.system.swap.size__pused_",
+        "name": "Swap utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925868",
+        "lastvalue": "20"
+      },
+      {
+        "itemid": "50820",
+        "key_": "diplom.threshold.vfs.fs.size___pused_",
+        "name": "Root disk utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "50821",
+        "key_": "diplom.disk.queue",
+        "name": "Disk I/O queue",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50822",
+        "key_": "diplom.threshold.diplom.disk.queue",
+        "name": "Disk I/O queue threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "50860",
+        "key_": "diplom.disk.errors",
+        "name": "Disk I/O errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925850",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50861",
+        "key_": "diplom.threshold.diplom.disk.errors",
+        "name": "Disk I/O errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925851",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50862",
+        "key_": "diplom.http.requests",
+        "name": "HTTP requests per second",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925852",
+        "lastvalue": "0.900024469355259"
+      },
+      {
+        "itemid": "50848",
+        "key_": "diplom.net.in",
+        "name": "Network receive",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925868",
+        "lastvalue": "964.5064174551416"
+      },
+      {
+        "itemid": "50849",
+        "key_": "diplom.net.out",
+        "name": "Network transmit",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925869",
+        "lastvalue": "2540.1303109821934"
+      },
+      {
+        "itemid": "50850",
+        "key_": "diplom.net.errors",
+        "name": "Network errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50851",
+        "key_": "diplom.threshold.diplom.net.errors",
+        "name": "Network errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50859",
+        "key_": "diplom.threshold.diplom.memory.stalls",
+        "name": "Memory allocation stalls threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925849",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50864",
+        "key_": "diplom.threshold.diplom.http.active",
+        "name": "HTTP active connections threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "100"
+      },
+      {
+        "itemid": "51494",
+        "key_": "diplom.disk.busy_ms",
+        "name": "Disk I/O busy",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "0.1099976356191553"
+      },
+      {
+        "itemid": "51495",
+        "key_": "diplom.threshold.diplom.disk.busy_ms",
+        "name": "Disk I/O busy threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51496",
+        "key_": "diplom.net.saturation",
+        "name": "Network softirq budget exhaustion",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51497",
+        "key_": "diplom.threshold.diplom.net.saturation",
+        "name": "Network softirq budget exhaustion threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925857",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51498",
+        "key_": "diplom.memory.errors",
+        "name": "Memory OOM errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925858",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51499",
+        "key_": "diplom.threshold.diplom.memory.errors",
+        "name": "Memory OOM errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925859",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51530",
+        "key_": "diplom.threshold.http.response",
+        "name": "HTTP response time threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925860",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51531",
+        "key_": "diplom.threshold.http.fail",
+        "name": "HTTP failed steps threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925861",
+        "lastvalue": "0"
+      }
+    ],
+    "http_items": [
+      {
+        "itemid": "50867",
+        "key_": "web.test.in[HTTP / web-a,,bps]",
+        "name": "Download speed for scenario \"HTTP / web-a\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "126192"
+      },
+      {
+        "itemid": "50868",
+        "key_": "web.test.fail[HTTP / web-a]",
+        "name": "Failed step of scenario \"HTTP / web-a\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50869",
+        "key_": "web.test.error[HTTP / web-a]",
+        "name": "Last error message of scenario \"HTTP / web-a\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790924341",
+        "lastvalue": "Failed to connect to diplom-web-a.ru-central1.internal:80 after 8 ms: Could not connect to server"
+      },
+      {
+        "itemid": "50870",
+        "key_": "web.test.rspcode[HTTP / web-a,Root page]",
+        "name": "Response code for step \"Root page\" of scenario \"HTTP / web-a\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "200"
+      },
+      {
+        "itemid": "50871",
+        "key_": "web.test.time[HTTP / web-a,Root page,resp]",
+        "name": "Response time for step \"Root page\" of scenario \"HTTP / web-a\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "0.006829"
+      },
+      {
+        "itemid": "50872",
+        "key_": "web.test.in[HTTP / web-a,Root page,bps]",
+        "name": "Download speed for step \"Root page\" of scenario \"HTTP / web-a\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "126192"
+      }
+    ]
+  },
+  {
+    "hostid": "10684",
+    "host": "diplom-web-b.ru-central1.internal",
+    "interfaces": [
+      {
+        "available": "1",
+        "error": ""
+      }
+    ],
+    "custom_items": [
+      {
+        "itemid": "50944",
+        "key_": "diplom.cpu.util",
+        "name": "CPU utilization",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "1.1914680000000004"
+      },
+      {
+        "itemid": "50945",
+        "key_": "diplom.threshold.diplom.cpu.util",
+        "name": "CPU utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925845",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "50949",
+        "key_": "diplom.threshold.vm.memory.size_pused_",
+        "name": "RAM used threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925849",
+        "lastvalue": "90"
+      },
+      {
+        "itemid": "50951",
+        "key_": "diplom.threshold.system.swap.size__pused_",
+        "name": "Swap utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925851",
+        "lastvalue": "20"
+      },
+      {
+        "itemid": "50953",
+        "key_": "diplom.threshold.vfs.fs.size___pused_",
+        "name": "Root disk utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "50954",
+        "key_": "diplom.disk.queue",
+        "name": "Disk I/O queue",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50955",
+        "key_": "diplom.threshold.diplom.disk.queue",
+        "name": "Disk I/O queue threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "50956",
+        "key_": "diplom.net.in",
+        "name": "Network receive",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "936.3583742821072"
+      },
+      {
+        "itemid": "50957",
+        "key_": "diplom.net.out",
+        "name": "Network transmit",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925857",
+        "lastvalue": "2330.0780864178555"
+      },
+      {
+        "itemid": "50958",
+        "key_": "diplom.net.errors",
+        "name": "Network errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925858",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50959",
+        "key_": "diplom.threshold.diplom.net.errors",
+        "name": "Network errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925859",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50960",
+        "key_": "diplom.net.drops",
+        "name": "Network dropped packets",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925860",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50961",
+        "key_": "diplom.threshold.diplom.net.drops",
+        "name": "Network dropped packets threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925861",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50962",
+        "key_": "diplom.services.failed",
+        "name": "Failed systemd units",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50963",
+        "key_": "diplom.threshold.diplom.services.failed",
+        "name": "Failed systemd units threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50964",
+        "key_": "diplom.kernel.errors",
+        "name": "Kernel hardware errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925864",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50965",
+        "key_": "diplom.threshold.diplom.kernel.errors",
+        "name": "Kernel hardware errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925865",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50966",
+        "key_": "diplom.memory.stalls",
+        "name": "Memory allocation stalls",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925866",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50968",
+        "key_": "diplom.disk.errors",
+        "name": "Disk I/O errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925868",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50969",
+        "key_": "diplom.threshold.diplom.disk.errors",
+        "name": "Disk I/O errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925839",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50970",
+        "key_": "diplom.http.requests",
+        "name": "HTTP requests per second",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "0.8999651134523537"
+      },
+      {
+        "itemid": "50971",
+        "key_": "diplom.http.active",
+        "name": "HTTP active connections",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "5"
+      },
+      {
+        "itemid": "50973",
+        "key_": "diplom.http.errors",
+        "name": "HTTP 5xx per second",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50974",
+        "key_": "diplom.threshold.diplom.http.errors",
+        "name": "HTTP 5xx per second threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50967",
+        "key_": "diplom.threshold.diplom.memory.stalls",
+        "name": "Memory allocation stalls threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925867",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50972",
+        "key_": "diplom.threshold.diplom.http.active",
+        "name": "HTTP active connections threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "100"
+      },
+      {
+        "itemid": "50947",
+        "key_": "diplom.threshold.system.cpu.load_percpu_avg1_",
+        "name": "CPU queue per core threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925847",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51500",
+        "key_": "diplom.disk.busy_ms",
+        "name": "Disk I/O busy",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925860",
+        "lastvalue": "0.07667095877083113"
+      },
+      {
+        "itemid": "51501",
+        "key_": "diplom.threshold.diplom.disk.busy_ms",
+        "name": "Disk I/O busy threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925861",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51502",
+        "key_": "diplom.net.saturation",
+        "name": "Network softirq budget exhaustion",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51503",
+        "key_": "diplom.threshold.diplom.net.saturation",
+        "name": "Network softirq budget exhaustion threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51504",
+        "key_": "diplom.memory.errors",
+        "name": "Memory OOM errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925864",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51505",
+        "key_": "diplom.threshold.diplom.memory.errors",
+        "name": "Memory OOM errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925865",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51532",
+        "key_": "diplom.threshold.http.response",
+        "name": "HTTP response time threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51533",
+        "key_": "diplom.threshold.http.fail",
+        "name": "HTTP failed steps threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "0"
+      }
+    ],
+    "http_items": [
+      {
+        "itemid": "50975",
+        "key_": "web.test.in[HTTP / web-b,,bps]",
+        "name": "Download speed for scenario \"HTTP / web-b\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "56515"
+      },
+      {
+        "itemid": "50976",
+        "key_": "web.test.fail[HTTP / web-b]",
+        "name": "Failed step of scenario \"HTTP / web-b\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "50977",
+        "key_": "web.test.error[HTTP / web-b]",
+        "name": "Last error message of scenario \"HTTP / web-b\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "50978",
+        "key_": "web.test.rspcode[HTTP / web-b,Root page]",
+        "name": "Response code for step \"Root page\" of scenario \"HTTP / web-b\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "200"
+      },
+      {
+        "itemid": "50979",
+        "key_": "web.test.time[HTTP / web-b,Root page,resp]",
+        "name": "Response time for step \"Root page\" of scenario \"HTTP / web-b\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "0.015258"
+      },
+      {
+        "itemid": "50980",
+        "key_": "web.test.in[HTTP / web-b,Root page,bps]",
+        "name": "Download speed for step \"Root page\" of scenario \"HTTP / web-b\".",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "56515"
+      }
+    ]
+  },
+  {
+    "hostid": "10685",
+    "host": "diplom-elastic.ru-central1.internal",
+    "interfaces": [
+      {
+        "available": "1",
+        "error": ""
+      }
+    ],
+    "custom_items": [
+      {
+        "itemid": "51052",
+        "key_": "diplom.cpu.util",
+        "name": "CPU utilization",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "1.1690049999999985"
+      },
+      {
+        "itemid": "51053",
+        "key_": "diplom.threshold.diplom.cpu.util",
+        "name": "CPU utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51057",
+        "key_": "diplom.threshold.vm.memory.size_pused_",
+        "name": "RAM used threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925867",
+        "lastvalue": "90"
+      },
+      {
+        "itemid": "51059",
+        "key_": "diplom.threshold.system.swap.size__pused_",
+        "name": "Swap utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925869",
+        "lastvalue": "20"
+      },
+      {
+        "itemid": "51061",
+        "key_": "diplom.threshold.vfs.fs.size___pused_",
+        "name": "Root disk utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51062",
+        "key_": "diplom.disk.queue",
+        "name": "Disk I/O queue",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51063",
+        "key_": "diplom.threshold.diplom.disk.queue",
+        "name": "Disk I/O queue threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "51064",
+        "key_": "diplom.net.in",
+        "name": "Network receive",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "8600.973878037496"
+      },
+      {
+        "itemid": "51065",
+        "key_": "diplom.net.out",
+        "name": "Network transmit",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925845",
+        "lastvalue": "1572.801967105857"
+      },
+      {
+        "itemid": "51066",
+        "key_": "diplom.net.errors",
+        "name": "Network errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925846",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51510",
+        "key_": "diplom.memory.errors",
+        "name": "Memory OOM errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51067",
+        "key_": "diplom.threshold.diplom.net.errors",
+        "name": "Network errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925847",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51068",
+        "key_": "diplom.net.drops",
+        "name": "Network dropped packets",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925848",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51069",
+        "key_": "diplom.threshold.diplom.net.drops",
+        "name": "Network dropped packets threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925849",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51070",
+        "key_": "diplom.services.failed",
+        "name": "Failed systemd units",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925850",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51055",
+        "key_": "diplom.threshold.system.cpu.load_percpu_avg1_",
+        "name": "CPU queue per core threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925865",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51071",
+        "key_": "diplom.threshold.diplom.services.failed",
+        "name": "Failed systemd units threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925851",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51072",
+        "key_": "diplom.kernel.errors",
+        "name": "Kernel hardware errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925852",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51073",
+        "key_": "diplom.threshold.diplom.kernel.errors",
+        "name": "Kernel hardware errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51074",
+        "key_": "diplom.memory.stalls",
+        "name": "Memory allocation stalls",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51075",
+        "key_": "diplom.threshold.diplom.memory.stalls",
+        "name": "Memory allocation stalls threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51076",
+        "key_": "diplom.disk.errors",
+        "name": "Disk I/O errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51077",
+        "key_": "diplom.threshold.diplom.disk.errors",
+        "name": "Disk I/O errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925857",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51509",
+        "key_": "diplom.threshold.diplom.net.saturation",
+        "name": "Network softirq budget exhaustion threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925869",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51511",
+        "key_": "diplom.threshold.diplom.memory.errors",
+        "name": "Memory OOM errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51506",
+        "key_": "diplom.disk.busy_ms",
+        "name": "Disk I/O busy",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925866",
+        "lastvalue": "0.42668050347449116"
+      },
+      {
+        "itemid": "51507",
+        "key_": "diplom.threshold.diplom.disk.busy_ms",
+        "name": "Disk I/O busy threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925867",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51508",
+        "key_": "diplom.net.saturation",
+        "name": "Network softirq budget exhaustion",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925868",
+        "lastvalue": "0"
+      }
+    ],
+    "http_items": []
+  },
+  {
+    "hostid": "10686",
+    "host": "diplom-zabbix.ru-central1.internal",
+    "interfaces": [
+      {
+        "available": "1",
+        "error": ""
+      }
+    ],
+    "custom_items": [
+      {
+        "itemid": "51159",
+        "key_": "diplom.disk.queue",
+        "name": "Disk I/O queue",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925849",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51163",
+        "key_": "diplom.net.errors",
+        "name": "Network errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51149",
+        "key_": "diplom.cpu.util",
+        "name": "CPU utilization",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925869",
+        "lastvalue": "20.122861999999998"
+      },
+      {
+        "itemid": "51150",
+        "key_": "diplom.threshold.diplom.cpu.util",
+        "name": "CPU utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51152",
+        "key_": "diplom.threshold.system.cpu.load_percpu_avg1_",
+        "name": "CPU queue per core threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51154",
+        "key_": "diplom.threshold.vm.memory.size_pused_",
+        "name": "RAM used threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "90"
+      },
+      {
+        "itemid": "51156",
+        "key_": "diplom.threshold.system.swap.size__pused_",
+        "name": "Swap utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925846",
+        "lastvalue": "20"
+      },
+      {
+        "itemid": "51158",
+        "key_": "diplom.threshold.vfs.fs.size___pused_",
+        "name": "Root disk utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925848",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51160",
+        "key_": "diplom.threshold.diplom.disk.queue",
+        "name": "Disk I/O queue threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925850",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "51161",
+        "key_": "diplom.net.in",
+        "name": "Network receive",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925851",
+        "lastvalue": "3215.4596098046427"
+      },
+      {
+        "itemid": "51162",
+        "key_": "diplom.net.out",
+        "name": "Network transmit",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925852",
+        "lastvalue": "3151.7770732042068"
+      },
+      {
+        "itemid": "51164",
+        "key_": "diplom.threshold.diplom.net.errors",
+        "name": "Network errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51165",
+        "key_": "diplom.net.drops",
+        "name": "Network dropped packets",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51166",
+        "key_": "diplom.threshold.diplom.net.drops",
+        "name": "Network dropped packets threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51167",
+        "key_": "diplom.services.failed",
+        "name": "Failed systemd units",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925857",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51168",
+        "key_": "diplom.threshold.diplom.services.failed",
+        "name": "Failed systemd units threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925858",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51169",
+        "key_": "diplom.kernel.errors",
+        "name": "Kernel hardware errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925859",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51170",
+        "key_": "diplom.threshold.diplom.kernel.errors",
+        "name": "Kernel hardware errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925860",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51171",
+        "key_": "diplom.memory.stalls",
+        "name": "Memory allocation stalls",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925861",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51172",
+        "key_": "diplom.threshold.diplom.memory.stalls",
+        "name": "Memory allocation stalls threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51173",
+        "key_": "diplom.disk.errors",
+        "name": "Disk I/O errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51174",
+        "key_": "diplom.threshold.diplom.disk.errors",
+        "name": "Disk I/O errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925864",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51512",
+        "key_": "diplom.disk.busy_ms",
+        "name": "Disk I/O busy",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "0.7734463676472529"
+      },
+      {
+        "itemid": "51513",
+        "key_": "diplom.threshold.diplom.disk.busy_ms",
+        "name": "Disk I/O busy threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51514",
+        "key_": "diplom.net.saturation",
+        "name": "Network softirq budget exhaustion",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51515",
+        "key_": "diplom.threshold.diplom.net.saturation",
+        "name": "Network softirq budget exhaustion threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925845",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51516",
+        "key_": "diplom.memory.errors",
+        "name": "Memory OOM errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925846",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51517",
+        "key_": "diplom.threshold.diplom.memory.errors",
+        "name": "Memory OOM errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925847",
+        "lastvalue": "0"
+      }
+    ],
+    "http_items": []
+  },
+  {
+    "hostid": "10687",
+    "host": "diplom-kibana.ru-central1.internal",
+    "interfaces": [
+      {
+        "available": "1",
+        "error": ""
+      }
+    ],
+    "custom_items": [
+      {
+        "itemid": "51256",
+        "key_": "diplom.disk.queue",
+        "name": "Disk I/O queue",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51260",
+        "key_": "diplom.net.errors",
+        "name": "Network errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925860",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51247",
+        "key_": "diplom.threshold.diplom.cpu.util",
+        "name": "CPU utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925847",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51249",
+        "key_": "diplom.threshold.system.cpu.load_percpu_avg1_",
+        "name": "CPU queue per core threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925849",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51251",
+        "key_": "diplom.threshold.vm.memory.size_pused_",
+        "name": "RAM used threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925851",
+        "lastvalue": "90"
+      },
+      {
+        "itemid": "51246",
+        "key_": "diplom.cpu.util",
+        "name": "CPU utilization",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925846",
+        "lastvalue": "0.835841000000002"
+      },
+      {
+        "itemid": "51253",
+        "key_": "diplom.threshold.system.swap.size__pused_",
+        "name": "Swap utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "20"
+      },
+      {
+        "itemid": "51255",
+        "key_": "diplom.threshold.vfs.fs.size___pused_",
+        "name": "Root disk utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51257",
+        "key_": "diplom.threshold.diplom.disk.queue",
+        "name": "Disk I/O queue threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925857",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "51258",
+        "key_": "diplom.net.in",
+        "name": "Network receive",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925858",
+        "lastvalue": "1857.0715953468239"
+      },
+      {
+        "itemid": "51259",
+        "key_": "diplom.net.out",
+        "name": "Network transmit",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925859",
+        "lastvalue": "8325.102379591763"
+      },
+      {
+        "itemid": "51261",
+        "key_": "diplom.threshold.diplom.net.errors",
+        "name": "Network errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925861",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51262",
+        "key_": "diplom.net.drops",
+        "name": "Network dropped packets",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51263",
+        "key_": "diplom.threshold.diplom.net.drops",
+        "name": "Network dropped packets threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51264",
+        "key_": "diplom.services.failed",
+        "name": "Failed systemd units",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925864",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51265",
+        "key_": "diplom.threshold.diplom.services.failed",
+        "name": "Failed systemd units threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925865",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51266",
+        "key_": "diplom.kernel.errors",
+        "name": "Kernel hardware errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925866",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51267",
+        "key_": "diplom.threshold.diplom.kernel.errors",
+        "name": "Kernel hardware errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925867",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51268",
+        "key_": "diplom.memory.stalls",
+        "name": "Memory allocation stalls",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925868",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51269",
+        "key_": "diplom.threshold.diplom.memory.stalls",
+        "name": "Memory allocation stalls threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925869",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51270",
+        "key_": "diplom.disk.errors",
+        "name": "Disk I/O errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51271",
+        "key_": "diplom.threshold.diplom.disk.errors",
+        "name": "Disk I/O errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51518",
+        "key_": "diplom.disk.busy_ms",
+        "name": "Disk I/O busy",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925848",
+        "lastvalue": "0.0033333148962130903"
+      },
+      {
+        "itemid": "51519",
+        "key_": "diplom.threshold.diplom.disk.busy_ms",
+        "name": "Disk I/O busy threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925849",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51520",
+        "key_": "diplom.net.saturation",
+        "name": "Network softirq budget exhaustion",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925850",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51521",
+        "key_": "diplom.threshold.diplom.net.saturation",
+        "name": "Network softirq budget exhaustion threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925851",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51522",
+        "key_": "diplom.memory.errors",
+        "name": "Memory OOM errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925852",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51523",
+        "key_": "diplom.threshold.diplom.memory.errors",
+        "name": "Memory OOM errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "0"
+      }
+    ],
+    "http_items": []
+  },
+  {
+    "hostid": "10688",
+    "host": "diplom-bastion.ru-central1.internal",
+    "interfaces": [
+      {
+        "available": "1",
+        "error": ""
+      }
+    ],
+    "custom_items": [
+      {
+        "itemid": "51353",
+        "key_": "diplom.disk.queue",
+        "name": "Disk I/O queue",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925863",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51357",
+        "key_": "diplom.net.errors",
+        "name": "Network errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925867",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51343",
+        "key_": "diplom.cpu.util",
+        "name": "CPU utilization",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925853",
+        "lastvalue": "0.8508510000000058"
+      },
+      {
+        "itemid": "51344",
+        "key_": "diplom.threshold.diplom.cpu.util",
+        "name": "CPU utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51346",
+        "key_": "diplom.threshold.system.cpu.load_percpu_avg1_",
+        "name": "CPU queue per core threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51348",
+        "key_": "diplom.threshold.vm.memory.size_pused_",
+        "name": "RAM used threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925858",
+        "lastvalue": "90"
+      },
+      {
+        "itemid": "51350",
+        "key_": "diplom.threshold.system.swap.size__pused_",
+        "name": "Swap utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925860",
+        "lastvalue": "20"
+      },
+      {
+        "itemid": "51352",
+        "key_": "diplom.threshold.vfs.fs.size___pused_",
+        "name": "Root disk utilization threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925862",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51354",
+        "key_": "diplom.threshold.diplom.disk.queue",
+        "name": "Disk I/O queue threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925864",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "51355",
+        "key_": "diplom.net.in",
+        "name": "Network receive",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925865",
+        "lastvalue": "548.5221588142063"
+      },
+      {
+        "itemid": "51356",
+        "key_": "diplom.net.out",
+        "name": "Network transmit",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925866",
+        "lastvalue": "758.7989644893107"
+      },
+      {
+        "itemid": "51358",
+        "key_": "diplom.threshold.diplom.net.errors",
+        "name": "Network errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925868",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51359",
+        "key_": "diplom.net.drops",
+        "name": "Network dropped packets",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925869",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51360",
+        "key_": "diplom.threshold.diplom.net.drops",
+        "name": "Network dropped packets threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925840",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51361",
+        "key_": "diplom.services.failed",
+        "name": "Failed systemd units",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925841",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "51362",
+        "key_": "diplom.threshold.diplom.services.failed",
+        "name": "Failed systemd units threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925842",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51363",
+        "key_": "diplom.kernel.errors",
+        "name": "Kernel hardware errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925843",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51364",
+        "key_": "diplom.threshold.diplom.kernel.errors",
+        "name": "Kernel hardware errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925844",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51365",
+        "key_": "diplom.memory.stalls",
+        "name": "Memory allocation stalls",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925845",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51366",
+        "key_": "diplom.threshold.diplom.memory.stalls",
+        "name": "Memory allocation stalls threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925846",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51367",
+        "key_": "diplom.disk.errors",
+        "name": "Disk I/O errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925847",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51368",
+        "key_": "diplom.threshold.diplom.disk.errors",
+        "name": "Disk I/O errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925848",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51524",
+        "key_": "diplom.disk.busy_ms",
+        "name": "Disk I/O busy",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925854",
+        "lastvalue": "0.0800001150961656"
+      },
+      {
+        "itemid": "51525",
+        "key_": "diplom.threshold.diplom.disk.busy_ms",
+        "name": "Disk I/O busy threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925855",
+        "lastvalue": "80"
+      },
+      {
+        "itemid": "51526",
+        "key_": "diplom.net.saturation",
+        "name": "Network softirq budget exhaustion",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925856",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51527",
+        "key_": "diplom.threshold.diplom.net.saturation",
+        "name": "Network softirq budget exhaustion threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925857",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51528",
+        "key_": "diplom.memory.errors",
+        "name": "Memory OOM errors",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925858",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "51529",
+        "key_": "diplom.threshold.diplom.memory.errors",
+        "name": "Memory OOM errors threshold",
+        "state": "0",
+        "error": "",
+        "lastclock": "1790925859",
+        "lastvalue": "0"
+      }
+    ],
+    "http_items": []
+  }
+]

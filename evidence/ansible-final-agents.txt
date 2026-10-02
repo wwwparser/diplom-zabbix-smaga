@@ -1,0 +1,9 @@
+﻿
+PLAY RECAP *********************************************************************
+diplom-bastion.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-elastic.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-kibana.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-web-a.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-web-b.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+diplom-zabbix.ru-central1.internal : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

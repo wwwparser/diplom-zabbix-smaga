@@ -1,0 +1,270 @@
+---
+- name: Base system and host monitoring
+  hosts: all
+  become: true
+  tasks:
+    - name: Enable Ubuntu universe packages
+      ansible.builtin.lineinfile:
+        path: /etc/apt/sources.list.d/ubuntu.sources
+        regexp: '^Components:'
+        line: 'Components: main restricted universe multiverse'
+    - name: Install base packages
+      ansible.builtin.apt:
+        name: [curl, ca-certificates, python3, docker.io, nginx, apache2-utils]
+        update_cache: true
+        cache_valid_time: 0
+    - name: Download official Zabbix repository package
+      ansible.builtin.get_url:
+        url: https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest+ubuntu24.04_all.deb
+        dest: /tmp/zabbix-release.deb
+        timeout: 60
+      register: repo_download
+      retries: 3
+      delay: 5
+      until: repo_download is succeeded
+      run_once: true
+      delegate_to: diplom-bastion.ru-central1.internal
+    - name: Read repository package from bastion
+      ansible.builtin.slurp: {src: /tmp/zabbix-release.deb}
+      register: repository_package
+      run_once: true
+      delegate_to: diplom-bastion.ru-central1.internal
+    - name: Distribute verified repository package
+      ansible.builtin.copy:
+        content: "{{ repository_package.content | b64decode }}"
+        dest: /tmp/zabbix-release.deb
+    - name: Enable official Zabbix repository
+      ansible.builtin.apt: {deb: /tmp/zabbix-release.deb}
+    - name: Install Zabbix agent
+      ansible.builtin.apt: {name: zabbix-agent, update_cache: true}
+    - name: Start Docker
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+    - name: Configure Docker Hub pull-through mirror
+      ansible.builtin.copy:
+        dest: /etc/docker/daemon.json
+        content: '{"registry-mirrors":["https://mirror.gcr.io"],"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"3"}}'
+      register: docker_config
+    - name: Apply Docker configuration
+      ansible.builtin.service: {name: docker, state: restarted}
+      when: docker_config.changed
+    - name: Zabbix agent configuration
+      ansible.builtin.copy:
+        dest: /etc/zabbix/zabbix_agentd.conf
+        content: |
+          PidFile=/run/zabbix/zabbix_agentd.pid
+          LogFile=/var/log/zabbix/zabbix_agentd.log
+          Server={{ '10.42.1.20,172.16.0.0/12' if inventory_hostname in groups['zabbix'] else '10.42.1.20' }}
+          ServerActive=diplom-zabbix.ru-central1.internal
+          Hostname={{ inventory_hostname }}
+          Include=/etc/zabbix/zabbix_agentd.d/*.conf
+    - name: Restart agent
+      ansible.builtin.service:
+        name: zabbix-agent
+        state: restarted
+        enabled: true
+    - name: Allow agent to read system and nginx logs
+      ansible.builtin.user: {name: zabbix, groups: adm, append: true}
+    - name: Install local USE collectors
+      tags: [metrics]
+      ansible.builtin.copy:
+        src: metrics.sh
+        dest: /usr/local/bin/diplom-metrics
+        mode: '0755'
+    - name: Configure local USE collectors
+      tags: [metrics]
+      ansible.builtin.copy:
+        dest: /etc/zabbix/zabbix_agentd.d/diplom.conf
+        content: |
+          UserParameter=diplom.net.in,/usr/local/bin/diplom-metrics net.in
+          UserParameter=diplom.net.out,/usr/local/bin/diplom-metrics net.out
+          UserParameter=diplom.net.errors,/usr/local/bin/diplom-metrics net.errors
+          UserParameter=diplom.net.drops,/usr/local/bin/diplom-metrics net.drops
+          UserParameter=diplom.disk.queue,/usr/local/bin/diplom-metrics disk.queue
+          UserParameter=diplom.disk.busy_ms,/usr/local/bin/diplom-metrics disk.busy_ms
+          UserParameter=diplom.net.saturation,/usr/local/bin/diplom-metrics net.saturation
+          UserParameter=diplom.memory.errors,/usr/local/bin/diplom-metrics memory.errors
+          UserParameter=diplom.disk.errors,/usr/local/bin/diplom-metrics disk.errors
+          UserParameter=diplom.kernel.errors,/usr/local/bin/diplom-metrics kernel.errors
+          UserParameter=diplom.memory.stalls,/usr/local/bin/diplom-metrics memory.stalls
+          UserParameter=diplom.services.failed,/usr/local/bin/diplom-metrics services.failed
+          UserParameter=diplom.http.requests,/usr/local/bin/diplom-metrics http.requests
+          UserParameter=diplom.http.active,/usr/local/bin/diplom-metrics http.active
+          UserParameter=diplom.http.errors,/usr/local/bin/diplom-metrics http.errors
+    - name: Reload agent after collector setup
+      tags: [metrics]
+      ansible.builtin.service: {name: zabbix-agent, state: restarted}
+    - name: Remove default nginx site
+      ansible.builtin.file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+    - name: Create application directory
+      ansible.builtin.file:
+        path: /opt/diplom
+        state: directory
+        mode: '0755'
+
+- name: Identical static websites
+  hosts: web
+  become: true
+  tasks:
+    - name: Static website
+      ansible.builtin.copy:
+        src: ../site/index.html
+        dest: /var/www/html/index.html
+    - name: Nginx website and metrics
+      ansible.builtin.copy:
+        dest: /etc/nginx/sites-enabled/diplom
+        content: |
+          server {
+            listen 80 default_server;
+            root /var/www/html;
+            add_header X-Backend $hostname always;
+            location / { try_files $uri $uri/ =404; }
+            location = /nginx_status {
+              stub_status;
+              allow 127.0.0.1;
+              allow 10.42.1.20;
+              deny all;
+            }
+          }
+    - name: Restart nginx
+      ansible.builtin.service: {name: nginx, state: restarted, enabled: true}
+    - name: Filebeat configuration
+      ansible.builtin.copy:
+        dest: /opt/diplom/filebeat.yml
+        mode: '0644'
+        content: |
+          filebeat.inputs:
+            - type: filestream
+              id: nginx-access
+              paths: [/var/log/nginx/access.log]
+              fields: {service: {name: nginx}, log_type: access, node: "{{ inventory_hostname }}"}
+              fields_under_root: true
+            - type: filestream
+              id: nginx-error
+              paths: [/var/log/nginx/error.log]
+              fields: {service: {name: nginx}, log_type: error, node: "{{ inventory_hostname }}"}
+              fields_under_root: true
+          output.elasticsearch:
+            hosts: ["http://diplom-elastic.ru-central1.internal:9200"]
+          setup.ilm.enabled: false
+          setup.template.name: nginx
+          setup.template.pattern: nginx-*
+          output.elasticsearch.index: nginx-%{+yyyy.MM.dd}
+    - name: Persistent filebeat registry
+      ansible.builtin.command: docker volume create filebeat-data
+      changed_when: false
+    - name: Run Filebeat
+      ansible.builtin.shell: |
+        docker rm -f filebeat 2>/dev/null || true
+        docker run -d --name filebeat --restart unless-stopped --user root \
+          -v /opt/diplom/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro \
+          -v /var/log/nginx:/var/log/nginx:ro \
+          -v filebeat-data:/usr/share/filebeat/data \
+          docker.elastic.co/beats/filebeat:8.15.3 --strict.perms=false
+      args: {executable: /bin/bash}
+
+- name: Elasticsearch private storage
+  hosts: elastic
+  become: true
+  tasks:
+    - name: Set vm.max_map_count
+      ansible.builtin.copy:
+        dest: /etc/sysctl.d/99-elasticsearch.conf
+        content: "vm.max_map_count=262144\n"
+    - name: Apply sysctl
+      ansible.builtin.command: sysctl --system
+      changed_when: false
+    - name: Create Elasticsearch volume
+      ansible.builtin.command: docker volume create elastic-data
+      changed_when: false
+    - name: Run Elasticsearch
+      ansible.builtin.shell: |
+        docker rm -f elasticsearch 2>/dev/null || true
+        docker run -d --name elasticsearch --restart unless-stopped \
+          -p 9200:9200 -v elastic-data:/usr/share/elasticsearch/data \
+          -e discovery.type=single-node -e xpack.security.enabled=false \
+          -e 'ES_JAVA_OPTS=-Xms1g -Xmx1g' \
+          docker.elastic.co/elasticsearch/elasticsearch:8.15.3
+      args: {executable: /bin/bash}
+
+- name: Zabbix server database and frontend
+  hosts: zabbix
+  become: true
+  vars_files: [secrets.yml]
+  tasks:
+    - name: Release port 80 for Zabbix frontend
+      ansible.builtin.service: {name: nginx, state: stopped, enabled: false}
+    - name: Zabbix Docker network
+      ansible.builtin.command: docker network create zabbix
+      register: network
+      failed_when: network.rc != 0 and 'already exists' not in network.stderr
+      changed_when: network.rc == 0
+    - name: Database volume
+      ansible.builtin.command: docker volume create zabbix-db
+      changed_when: false
+    - name: PostgreSQL
+      ansible.builtin.shell: |
+        docker rm -f zabbix-db 2>/dev/null || true
+        docker run -d --name zabbix-db --network zabbix --restart unless-stopped \
+          -v zabbix-db:/var/lib/postgresql/data -e POSTGRES_DB=zabbix \
+          -e POSTGRES_USER=zabbix -e POSTGRES_PASSWORD='{{ db_password }}' postgres:16-alpine
+      no_log: true
+    - name: Zabbix server
+      ansible.builtin.shell: |
+        docker rm -f zabbix-server 2>/dev/null || true
+        docker run -d --name zabbix-server --network zabbix --restart unless-stopped -p 10051:10051 \
+          --add-host diplom-zabbix.ru-central1.internal:10.42.1.20 \
+          -e DB_SERVER_HOST=zabbix-db -e POSTGRES_USER=zabbix \
+          -e POSTGRES_PASSWORD='{{ db_password }}' zabbix/zabbix-server-pgsql:alpine-7.0-latest
+      no_log: true
+    - name: Zabbix frontend
+      ansible.builtin.shell: |
+        docker rm -f zabbix-web 2>/dev/null || true
+        docker run -d --name zabbix-web --network zabbix --restart unless-stopped -p 80:8080 \
+          -e DB_SERVER_HOST=zabbix-db -e POSTGRES_USER=zabbix \
+          -e POSTGRES_PASSWORD='{{ db_password }}' -e ZBX_SERVER_HOST=zabbix-server \
+          -e PHP_TZ=Europe/Moscow zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest
+      no_log: true
+
+- name: Kibana authenticated web frontend
+  hosts: kibana
+  become: true
+  vars_files: [secrets.yml]
+  tasks:
+    - name: Run Kibana
+      ansible.builtin.shell: |
+        docker rm -f kibana 2>/dev/null || true
+        docker run -d --name kibana --restart unless-stopped -p 127.0.0.1:5602:5601 \
+          -e ELASTICSEARCH_HOSTS='["http://diplom-elastic.ru-central1.internal:9200"]' \
+          -e SERVER_HOST=0.0.0.0 -e TELEMETRY_ENABLED=false \
+          -e NODE_OPTIONS=--max-old-space-size=768 docker.elastic.co/kibana/kibana:8.15.3
+    - name: Basic authentication
+      ansible.builtin.command: "htpasswd -bc /etc/nginx/kibana.htpasswd reviewer {{ reviewer_password }}"
+      no_log: true
+    - name: Kibana reverse proxy
+      ansible.builtin.copy:
+        dest: /etc/nginx/sites-enabled/kibana
+        content: |
+          server {
+            listen 5601;
+            auth_basic "Diplom reviewer";
+            auth_basic_user_file /etc/nginx/kibana.htpasswd;
+            location / {
+              proxy_pass http://127.0.0.1:5602;
+              proxy_set_header Host $host;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+          }
+    - name: Restart nginx
+      ansible.builtin.service: {name: nginx, state: restarted, enabled: true}
+
+- name: Disable unnecessary web listener on bastion
+  hosts: bastion
+  become: true
+  tasks:
+    - name: Stop nginx
+      ansible.builtin.service: {name: nginx, state: stopped, enabled: false}

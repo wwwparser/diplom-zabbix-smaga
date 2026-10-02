@@ -1,0 +1,170 @@
+yandex_vpc_gateway.nat: Creating...
+yandex_alb_http_router.web: Creating...
+yandex_vpc_network.lab: Creating...
+yandex_vpc_gateway.nat: Creation complete after 1s [id=enpkq16kf3trl78t1t1g]
+yandex_alb_http_router.web: Creation complete after 2s [id=ds73fouvfom2i4ajplh2]
+yandex_vpc_network.lab: Creation complete after 2s [id=enp14ebqkts0eglraup0]
+yandex_vpc_route_table.nat: Creating...
+yandex_vpc_security_group.role["kibana"]: Creating...
+yandex_vpc_security_group.role["elastic"]: Creating...
+yandex_vpc_security_group.role["bastion"]: Creating...
+yandex_vpc_security_group.role["alb"]: Creating...
+yandex_vpc_security_group.role["web"]: Creating...
+yandex_vpc_security_group.role["zabbix"]: Creating...
+yandex_vpc_security_group.common: Creating...
+yandex_vpc_route_table.nat: Creation complete after 1s [id=enpt7hmreo7tl132j20f]
+yandex_vpc_subnet.lab["public-b"]: Creating...
+yandex_vpc_subnet.lab["public-a"]: Creating...
+yandex_vpc_subnet.lab["private-a"]: Creating...
+yandex_vpc_subnet.lab["public-a"]: Creation complete after 1s [id=e9ble17cch6s2q7b6tim]
+yandex_vpc_subnet.lab["private-b"]: Creating...
+yandex_vpc_security_group.role["bastion"]: Creation complete after 2s [id=enpmgtrjtt4c0bmok4h5]
+yandex_vpc_subnet.lab["public-b"]: Creation complete after 1s [id=e2lks3v9d8lanh38miml]
+yandex_vpc_subnet.lab["private-b"]: Creation complete after 1s [id=e2l4koscv88bd4jgaj2g]
+yandex_vpc_security_group.common: Creation complete after 3s [id=enpr60n1nkdghljv1qqs]
+yandex_vpc_subnet.lab["private-a"]: Creation complete after 3s [id=e9bg4cg2rm3sopqlp50k]
+yandex_vpc_security_group.role["zabbix"]: Creation complete after 5s [id=enptoclmhn0mr99rgk2d]
+yandex_vpc_security_group.role["elastic"]: Creation complete after 7s [id=enpja3d70hcsmgt6so3e]
+yandex_vpc_security_group.role["alb"]: Creation complete after 8s [id=enphrar0glukl0t1k5f3]
+yandex_alb_load_balancer.web: Creating...
+yandex_vpc_security_group.role["web"]: Creation complete after 10s [id=enpd9bsdqdhnrvlo9og0]
+yandex_vpc_security_group.role["kibana"]: Still creating... [10s elapsed]
+yandex_vpc_security_group.role["kibana"]: Creation complete after 13s [id=enpofd7ebtqjhva8lkgc]
+yandex_compute_instance.vm["bastion"]: Creating...
+yandex_compute_instance.vm["web-b"]: Creating...
+yandex_compute_instance.vm["elastic"]: Creating...
+yandex_compute_instance.vm["web-a"]: Creating...
+yandex_compute_instance.vm["zabbix"]: Creating...
+yandex_compute_instance.vm["kibana"]: Creating...
+yandex_alb_load_balancer.web: Still creating... [10s elapsed]
+yandex_compute_instance.vm["bastion"]: Still creating... [10s elapsed]
+yandex_compute_instance.vm["elastic"]: Still creating... [10s elapsed]
+yandex_compute_instance.vm["web-a"]: Still creating... [10s elapsed]
+yandex_compute_instance.vm["zabbix"]: Still creating... [10s elapsed]
+yandex_compute_instance.vm["web-b"]: Still creating... [10s elapsed]
+yandex_compute_instance.vm["kibana"]: Still creating... [10s elapsed]
+yandex_alb_load_balancer.web: Still creating... [20s elapsed]
+yandex_compute_instance.vm["zabbix"]: Still creating... [20s elapsed]
+yandex_compute_instance.vm["bastion"]: Still creating... [20s elapsed]
+yandex_compute_instance.vm["kibana"]: Still creating... [20s elapsed]
+yandex_compute_instance.vm["web-b"]: Still creating... [20s elapsed]
+yandex_compute_instance.vm["web-a"]: Still creating... [20s elapsed]
+yandex_compute_instance.vm["elastic"]: Still creating... [20s elapsed]
+yandex_alb_load_balancer.web: Still creating... [30s elapsed]
+yandex_compute_instance.vm["elastic"]: Still creating... [30s elapsed]
+yandex_compute_instance.vm["web-b"]: Still creating... [30s elapsed]
+yandex_compute_instance.vm["bastion"]: Still creating... [30s elapsed]
+yandex_compute_instance.vm["zabbix"]: Still creating... [30s elapsed]
+yandex_compute_instance.vm["kibana"]: Still creating... [30s elapsed]
+yandex_compute_instance.vm["web-a"]: Still creating... [30s elapsed]
+yandex_alb_load_balancer.web: Still creating... [40s elapsed]
+yandex_compute_instance.vm["bastion"]: Still creating... [40s elapsed]
+yandex_compute_instance.vm["web-a"]: Still creating... [40s elapsed]
+yandex_compute_instance.vm["zabbix"]: Still creating... [40s elapsed]
+yandex_compute_instance.vm["elastic"]: Still creating... [40s elapsed]
+yandex_compute_instance.vm["web-b"]: Still creating... [40s elapsed]
+yandex_compute_instance.vm["kibana"]: Still creating... [40s elapsed]
+yandex_compute_instance.vm["web-a"]: Creation complete after 41s [id=fhms81cjkv3oder5h5h7]
+yandex_compute_instance.vm["zabbix"]: Creation complete after 43s [id=fhm2c61125ef4ckcbgsu]
+yandex_compute_instance.vm["kibana"]: Creation complete after 43s [id=fhmsuefbard0jl465ekc]
+yandex_alb_load_balancer.web: Still creating... [50s elapsed]
+yandex_compute_instance.vm["bastion"]: Creation complete after 46s [id=fhm1hs6l2q6rvfgdrdhv]
+yandex_compute_instance.vm["elastic"]: Creation complete after 48s [id=fhm6qqolhlok2v1pjsh7]
+yandex_compute_instance.vm["web-b"]: Creation complete after 50s [id=epdo3743hr8jpm0chtr5]
+yandex_compute_snapshot_schedule.daily: Creating...
+yandex_alb_target_group.web: Creating...
+yandex_alb_target_group.web: Creation complete after 0s [id=ds7tt24pevtnkgtjjkbc]
+yandex_alb_backend_group.web: Creating...
+yandex_alb_backend_group.web: Creation complete after 0s [id=ds7ebi4jiogv1e88v117]
+yandex_alb_virtual_host.web: Creating...
+yandex_alb_virtual_host.web: Creation complete after 2s [id=ds73fouvfom2i4ajplh2/diplom-virtual-host]
+yandex_compute_snapshot_schedule.daily: Creation complete after 5s [id=fd8mtfpglksnupn49grf]
+yandex_alb_load_balancer.web: Still creating... [1m0s elapsed]
+yandex_alb_load_balancer.web: Still creating... [1m10s elapsed]
+yandex_alb_load_balancer.web: Still creating... [1m20s elapsed]
+yandex_alb_load_balancer.web: Still creating... [1m30s elapsed]
+yandex_alb_load_balancer.web: Still creating... [1m40s elapsed]
+yandex_alb_load_balancer.web: Still creating... [1m50s elapsed]
+yandex_alb_load_balancer.web: Still creating... [2m0s elapsed]
+yandex_alb_load_balancer.web: Still creating... [2m10s elapsed]
+yandex_alb_load_balancer.web: Still creating... [2m20s elapsed]
+yandex_alb_load_balancer.web: Still creating... [2m30s elapsed]
+yandex_alb_load_balancer.web: Still creating... [2m40s elapsed]
+yandex_alb_load_balancer.web: Still creating... [2m50s elapsed]
+yandex_alb_load_balancer.web: Still creating... [3m0s elapsed]
+yandex_alb_load_balancer.web: Still creating... [3m10s elapsed]
+yandex_alb_load_balancer.web: Still creating... [3m20s elapsed]
+yandex_alb_load_balancer.web: Still creating... [3m30s elapsed]
+yandex_alb_load_balancer.web: Still creating... [3m40s elapsed]
+yandex_alb_load_balancer.web: Still creating... [3m50s elapsed]
+yandex_alb_load_balancer.web: Still creating... [4m0s elapsed]
+yandex_alb_load_balancer.web: Still creating... [4m10s elapsed]
+yandex_alb_load_balancer.web: Still creating... [4m20s elapsed]
+yandex_alb_load_balancer.web: Still creating... [4m31s elapsed]
+yandex_alb_load_balancer.web: Still creating... [4m41s elapsed]
+yandex_alb_load_balancer.web: Still creating... [4m51s elapsed]
+yandex_alb_load_balancer.web: Still creating... [5m1s elapsed]
+yandex_alb_load_balancer.web: Still creating... [5m11s elapsed]
+yandex_alb_load_balancer.web: Still creating... [5m21s elapsed]
+yandex_alb_load_balancer.web: Still creating... [5m31s elapsed]
+yandex_alb_load_balancer.web: Still creating... [5m41s elapsed]
+yandex_alb_load_balancer.web: Still creating... [5m51s elapsed]
+yandex_alb_load_balancer.web: Still creating... [6m1s elapsed]
+yandex_alb_load_balancer.web: Still creating... [6m11s elapsed]
+yandex_alb_load_balancer.web: Still creating... [6m21s elapsed]
+yandex_alb_load_balancer.web: Still creating... [6m31s elapsed]
+yandex_alb_load_balancer.web: Still creating... [6m41s elapsed]
+yandex_alb_load_balancer.web: Still creating... [6m51s elapsed]
+yandex_alb_load_balancer.web: Still creating... [7m1s elapsed]
+yandex_alb_load_balancer.web: Creation complete after 7m2s [id=ds7r8i03tkhf5c5ap3hh]
+
+Apply complete! Resources: 26 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+alb_ip = "158.160.166.202"
+machines = {
+  "bastion" = {
+    "disk_id" = "fhm82gj02k9oie2l8d6g"
+    "fqdn" = "diplom-bastion.ru-central1.internal"
+    "id" = "fhm1hs6l2q6rvfgdrdhv"
+    "ip" = "10.42.1.10"
+    "public_ip" = "93.77.182.28"
+  }
+  "elastic" = {
+    "disk_id" = "fhme8b9osaebpq226hgg"
+    "fqdn" = "diplom-elastic.ru-central1.internal"
+    "id" = "fhm6qqolhlok2v1pjsh7"
+    "ip" = "10.42.10.20"
+    "public_ip" = ""
+  }
+  "kibana" = {
+    "disk_id" = "fhm6aep305hn4992vbp6"
+    "fqdn" = "diplom-kibana.ru-central1.internal"
+    "id" = "fhmsuefbard0jl465ekc"
+    "ip" = "10.42.1.30"
+    "public_ip" = "93.77.191.206"
+  }
+  "web-a" = {
+    "disk_id" = "fhmhk22b8v1lmivgbhn5"
+    "fqdn" = "diplom-web-a.ru-central1.internal"
+    "id" = "fhms81cjkv3oder5h5h7"
+    "ip" = "10.42.10.10"
+    "public_ip" = ""
+  }
+  "web-b" = {
+    "disk_id" = "epdur05kkh9cqhk6paik"
+    "fqdn" = "diplom-web-b.ru-central1.internal"
+    "id" = "epdo3743hr8jpm0chtr5"
+    "ip" = "10.42.20.10"
+    "public_ip" = ""
+  }
+  "zabbix" = {
+    "disk_id" = "fhmdaitlov586ijum17m"
+    "fqdn" = "diplom-zabbix.ru-central1.internal"
+    "id" = "fhm2c61125ef4ckcbgsu"
+    "ip" = "10.42.1.20"
+    "public_ip" = "93.77.180.118"
+  }
+}
+snapshot_schedule_id = "fd8mtfpglksnupn49grf"

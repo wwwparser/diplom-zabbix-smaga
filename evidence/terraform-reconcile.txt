@@ -1,0 +1,162 @@
+yandex_vpc_gateway.nat: Refreshing state... [id=enpkq16kf3trl78t1t1g]
+yandex_alb_http_router.web: Refreshing state... [id=ds73fouvfom2i4ajplh2]
+yandex_vpc_network.lab: Refreshing state... [id=enp14ebqkts0eglraup0]
+yandex_vpc_route_table.nat: Refreshing state... [id=enpt7hmreo7tl132j20f]
+yandex_vpc_security_group.role["elastic"]: Refreshing state... [id=enpja3d70hcsmgt6so3e]
+yandex_vpc_security_group.role["kibana"]: Refreshing state... [id=enpofd7ebtqjhva8lkgc]
+yandex_vpc_security_group.role["bastion"]: Refreshing state... [id=enpmgtrjtt4c0bmok4h5]
+yandex_vpc_security_group.role["web"]: Refreshing state... [id=enpd9bsdqdhnrvlo9og0]
+yandex_vpc_security_group.role["alb"]: Refreshing state... [id=enphrar0glukl0t1k5f3]
+yandex_vpc_security_group.role["zabbix"]: Refreshing state... [id=enptoclmhn0mr99rgk2d]
+yandex_vpc_security_group.common: Refreshing state... [id=enpr60n1nkdghljv1qqs]
+yandex_vpc_subnet.lab["private-a"]: Refreshing state... [id=e9bg4cg2rm3sopqlp50k]
+yandex_vpc_subnet.lab["public-b"]: Refreshing state... [id=e2lks3v9d8lanh38miml]
+yandex_vpc_subnet.lab["public-a"]: Refreshing state... [id=e9ble17cch6s2q7b6tim]
+yandex_vpc_subnet.lab["private-b"]: Refreshing state... [id=e2l4koscv88bd4jgaj2g]
+yandex_alb_load_balancer.web: Refreshing state... [id=ds7r8i03tkhf5c5ap3hh]
+yandex_compute_instance.vm["zabbix"]: Refreshing state... [id=fhm2c61125ef4ckcbgsu]
+yandex_compute_instance.vm["web-b"]: Refreshing state... [id=epdo3743hr8jpm0chtr5]
+yandex_compute_instance.vm["kibana"]: Refreshing state... [id=fhmsuefbard0jl465ekc]
+yandex_compute_instance.vm["elastic"]: Refreshing state... [id=fhm6qqolhlok2v1pjsh7]
+yandex_compute_instance.vm["web-a"]: Refreshing state... [id=fhms81cjkv3oder5h5h7]
+yandex_compute_instance.vm["bastion"]: Refreshing state... [id=fhm1hs6l2q6rvfgdrdhv]
+yandex_alb_target_group.web: Refreshing state... [id=ds7tt24pevtnkgtjjkbc]
+yandex_compute_snapshot_schedule.daily: Refreshing state... [id=fd8mtfpglksnupn49grf]
+yandex_alb_backend_group.web: Refreshing state... [id=ds7ebi4jiogv1e88v117]
+yandex_alb_virtual_host.web: Refreshing state... [id=ds73fouvfom2i4ajplh2/diplom-virtual-host]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # yandex_compute_snapshot_schedule.daily will be updated in-place
+  ~ resource "yandex_compute_snapshot_schedule" "daily" {
+        id               = "fd8mtfpglksnupn49grf"
+        name             = "diplom-daily-seven-days"
+      ~ retention_period = "168h0m0s" -> "168h"
+        # (7 unchanged attributes hidden)
+
+        # (2 unchanged blocks hidden)
+    }
+
+  # yandex_vpc_security_group.role["bastion"] will be updated in-place
+  ~ resource "yandex_vpc_security_group" "role" {
+        id          = "enpmgtrjtt4c0bmok4h5"
+        name        = "diplom-bastion"
+        # (6 unchanged attributes hidden)
+
+      - ingress {
+          - from_port         = -1 -> null
+          - id                = "enps01mf1p6altmtuptj" -> null
+          - labels            = {} -> null
+          - port              = 22 -> null
+          - protocol          = "TCP" -> null
+          - to_port           = -1 -> null
+          - v4_cidr_blocks    = [
+              - "50.7.28.210/32",
+            ] -> null
+          - v6_cidr_blocks    = [] -> null
+            # (3 unchanged attributes hidden)
+        }
+      - ingress {
+          - from_port         = -1 -> null
+          - id                = "enpvrlbe5k0rngjo4i2r" -> null
+          - labels            = {} -> null
+          - port              = 22 -> null
+          - protocol          = "TCP" -> null
+          - to_port           = -1 -> null
+          - v4_cidr_blocks    = [
+              - "5.181.211.174/32",
+            ] -> null
+          - v6_cidr_blocks    = [] -> null
+            # (3 unchanged attributes hidden)
+        }
+      - ingress {
+          - description       = "operator-gateway" -> null
+          - from_port         = -1 -> null
+          - id                = "enpmh2dhu1ssovltejcg" -> null
+          - labels            = {} -> null
+          - port              = 22 -> null
+          - protocol          = "TCP" -> null
+          - to_port           = -1 -> null
+          - v4_cidr_blocks    = [
+              - "45.90.46.19/32",
+            ] -> null
+          - v6_cidr_blocks    = [] -> null
+            # (2 unchanged attributes hidden)
+        }
+      + ingress {
+          + from_port         = -1
+          + id                = (known after apply)
+          + labels            = (known after apply)
+          + port              = 22
+          + protocol          = "TCP"
+          + to_port           = -1
+          + v4_cidr_blocks    = [
+              + "45.90.46.19/32",
+            ]
+          + v6_cidr_blocks    = []
+            # (3 unchanged attributes hidden)
+        }
+
+        # (1 unchanged block hidden)
+    }
+
+Plan: 0 to add, 2 to change, 0 to destroy.
+yandex_vpc_security_group.role["bastion"]: Modifying... [id=enpmgtrjtt4c0bmok4h5]
+yandex_vpc_security_group.role["bastion"]: Modifications complete after 1s [id=enpmgtrjtt4c0bmok4h5]
+yandex_compute_snapshot_schedule.daily: Modifying... [id=fd8mtfpglksnupn49grf]
+yandex_compute_snapshot_schedule.daily: Modifications complete after 0s [id=fd8mtfpglksnupn49grf]
+
+Apply complete! Resources: 0 added, 2 changed, 0 destroyed.
+
+Outputs:
+
+alb_ip = "158.160.166.202"
+machines = {
+  "bastion" = {
+    "disk_id" = "fhm82gj02k9oie2l8d6g"
+    "fqdn" = "diplom-bastion.ru-central1.internal"
+    "id" = "fhm1hs6l2q6rvfgdrdhv"
+    "ip" = "10.42.1.10"
+    "public_ip" = "93.77.182.28"
+  }
+  "elastic" = {
+    "disk_id" = "fhme8b9osaebpq226hgg"
+    "fqdn" = "diplom-elastic.ru-central1.internal"
+    "id" = "fhm6qqolhlok2v1pjsh7"
+    "ip" = "10.42.10.20"
+    "public_ip" = ""
+  }
+  "kibana" = {
+    "disk_id" = "fhm6aep305hn4992vbp6"
+    "fqdn" = "diplom-kibana.ru-central1.internal"
+    "id" = "fhmsuefbard0jl465ekc"
+    "ip" = "10.42.1.30"
+    "public_ip" = "93.77.191.206"
+  }
+  "web-a" = {
+    "disk_id" = "fhmhk22b8v1lmivgbhn5"
+    "fqdn" = "diplom-web-a.ru-central1.internal"
+    "id" = "fhms81cjkv3oder5h5h7"
+    "ip" = "10.42.10.10"
+    "public_ip" = ""
+  }
+  "web-b" = {
+    "disk_id" = "epdur05kkh9cqhk6paik"
+    "fqdn" = "diplom-web-b.ru-central1.internal"
+    "id" = "epdo3743hr8jpm0chtr5"
+    "ip" = "10.42.20.10"
+    "public_ip" = ""
+  }
+  "zabbix" = {
+    "disk_id" = "fhmdaitlov586ijum17m"
+    "fqdn" = "diplom-zabbix.ru-central1.internal"
+    "id" = "fhm2c61125ef4ckcbgsu"
+    "ip" = "10.42.1.20"
+    "public_ip" = "93.77.180.118"
+  }
+}
+snapshot_schedule_id = "fd8mtfpglksnupn49grf"
